@@ -10,7 +10,47 @@
       <dd class="faded clearafter">
         <div class="fr mb05">
           <span class="sr-only">"Fluency:</span>
-          {{fluency}}
+          {{#switch fluency}}
+            {{#case "5" "nativeorbilingualproficiency" "nativespeaker" break=true}}
+              <span class="help" title="{{ fluency }}">
+                <span class="sr-only">{{ fluency }}</span>
+                <span class="icon-star-full"></span><span class="icon-star-full"></span><span class="icon-star-full"></span>
+              </span>
+            {{/case}}
+            {{#case "4" "fullprofessionalproficiency" break=true}}
+              <span class="help" title="{{ fluency }}">
+                <span class="sr-only">{{ fluency }}</span>
+                <span class="icon-star-full"></span><span class="icon-star-full"></span><span class="icon-star-half"></span>
+              </span>
+            {{/case}}
+            {{#case "3" "professionalworkingproficiency" break=true}}
+              <span class="help" title="{{ fluency }}">
+                <span class="sr-only">{{ fluency }}</span>
+                <span class="icon-star-full"></span><span class="icon-star-full"></span><span class="icon-star-empty"></span>
+              </span>
+            {{/case}}
+            {{#case "2" "limitedworkingproficiency" break=true}}
+              <span class="help" title="{{ fluency }}">
+                <span class="sr-only">{{ fluency }}</span>
+                <span class="icon-star-full"></span><span class="icon-star-half"></span><span class="icon-star-empty"></span>
+              </span>
+            {{/case}}
+            {{#case "1" "elementaryproficiency" break=true}}
+              <span class="help" title="{{ fluency }}">
+                <span class="sr-only">{{ fluency }}</span>
+                <span class="icon-star-full"></span><span class="icon-star-empty"></span><span class="icon-star-empty"></span>
+              </span>
+            {{/case}}
+            {{#case "0" "noproficiency" break=true}}
+              <span class="help" title="{{ fluency }}">
+                <span class="sr-only">{{ fluency }}</span>
+                <span class="icon-star-empty"></span><span class="icon-star-empty"></span><span class="icon-star-empty"></span>
+              </span>
+            {{/case}}
+            {{#default}}
+              {{ fluency }}
+            {{/default}}
+          {{/switch}}
         </div>
       </dd>
     {{/each}}

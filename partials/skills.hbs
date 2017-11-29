@@ -10,17 +10,45 @@
       <dd class="faded clearafter">
         <div class="fr mb05">
           <span class="sr-only">Level:</span>
-          {{ level }}
+          {{#switch level}}
+            {{#case "3" "master" "expert" "senior" break=true}}
+              <span class="help" title="{{level}}">
+                <span class="sr-only">{{level}}</span>
+                <span class="icon-star-full"></span><span class="icon-star-full"></span><span class="icon-star-full"></span>
+              </span>
+            {{/case}}
+            {{#case "2" "intermediate" "amateur" break=true}}
+              <span class="help" title="{{level}}">
+                <span class="sr-only">{{level}}</span>
+                <span class="icon-star-full"></span><span class="icon-star-full"></span><span class="icon-star-empty"></span>
+              </span>
+            {{/case}}
+            {{#case "1" "beginner" "novice" "junior" break=true}}
+              <span class="help" title="{{level}}">
+                <span class="sr-only">{{level}}</span>
+                <span class="icon-star-full"></span><span class="icon-star-empty"></span><span class="icon-star-empty"></span>
+              </span>
+            {{/case}}
+            {{#case "0" break=true}}
+              <span class="help" title="{{level}}">
+                <span class="sr-only">{{level}}</span>
+                <span class="icon-star-empty"></span><span class="icon-star-empty"></span><span class="icon-star-empty"></span>
+              </span>
+            {{/case}}
+            {{#default}}
+              {{ level }}
+            {{/default}}
+          {{/switch}}
         </div>
         {{#if keywords.length}}
-        <div>
-          <span class="sr-only">Keywords:</span>
-          <ul class="tags">
-            {{#each keywords}}
-              <li class="tag">{{.}}</li>
-            {{/each}}
-          </ul>
-        </div>
+          <div>
+            <span class="sr-only">Keywords:</span>
+            <ul class="tags">
+              {{#each keywords}}
+                <li class="tag">{{.}}</li>
+              {{/each}}
+            </ul>
+          </div>
         {{/if}}
       </dd>
     {{/each}}

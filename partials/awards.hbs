@@ -5,19 +5,21 @@
     <span class="symbol icon-trophy"></span>
   </h2>
   {{#each resume.awards}}
+  <section>
     <header class="{{#unless @first}}mt3{{/unless}}">
       {{#if date.length}}
         <p class="faded">
-          <time datetime="{{date}}">{{date}}</time>
+          <time datetime="{{date}}">{{formattedDate date}}</time>
         </p>
       {{/if}}
       <h3 class="h4 faded" property="award">
         <span class="bc">{{title}}</span>
         from
-        <span class="bc">{{ awarder }}</span>
+        <span class="bc">{{awarder}}</span>
       </h3>
     </header>
-    {{> message text=summary alt=""}}
+    {{> message text=summary alt=" "}}
+  </section>
   {{/each}}
 </section>
 {{/if}}

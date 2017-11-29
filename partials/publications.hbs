@@ -5,10 +5,11 @@
     <span class="symbol icon-book"></span>
   </h2>
   {{#each resume.publications}}
+  <section>
     <header class="{{#unless @first}}mt3{{/unless}}">
       {{#if releaseDate.length}}
         <p class="faded">
-          <time datetime="{{releaseDate}}">{{releaseDate}}</time>
+          <time datetime="{{releaseDate}}">{{formattedDate releaseDate}}</time>
         </p>
       {{/if}}
       <h3 class="h4 faded">
@@ -18,7 +19,8 @@
       </h3>
     </header>
 
-    {{> message text=summary alt=""}}
-	{{/each}}
+    {{> message text=summary alt=" "}}
+  </section>
+ {{/each}}
 </section>
 {{/if}}

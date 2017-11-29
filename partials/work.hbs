@@ -5,6 +5,7 @@
     <span class="symbol icon-briefcase"></span>
   </h2>
   {{#each resume.work}}
+  <section>
     <header
       class="{{#unless @first}}mt3{{/unless}}"
       property="{{#if endDate.length}}alumniOf{{else}}worksFor{{/if}}"
@@ -12,10 +13,10 @@
       >
       {{#if startDate.length}}
         <p class="faded">
-          <time datetime="{{startDate}}">{{startDate}}</time>
+          <time datetime="{{startDate}}">{{formattedDate startDate}}</time>
           –
           {{#if endDate.length}}
-            <time datetime="{{endDate}}">{{endDate}}</time>
+            <time datetime="{{endDate}}">{{formattedDate endDate}}</time>
           {{else}}
             <em>present</em>
           {{/if}}
@@ -33,7 +34,7 @@
       </h3>
     </header>
 
-    {{> message text=summary alt=""}}
+    {{> message text=summary alt=" "}}
 
     <h4 class="sr-only">Highlights</h4>
     <ul>
@@ -41,6 +42,7 @@
         <li>{{.}}</li>
       {{/each}}
     </ul>
+  </section>
   {{/each}}
 </section>
 {{/if}}

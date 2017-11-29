@@ -2,14 +2,12 @@
 <header class="hr">
   <h1 class="page-title fn p-name" property="name">{{name}}</h1>
 
-  {{#if picture.length}}
-    <img
-      src="picture"
-      class="avatar photo u-photo"
-      alt="{{name}}"
-      property="image"
-    />
-  {{/if}}
+  <img
+    src="{{urlForPicture .}}"
+    class="avatar photo u-photo"
+    alt="{{name}}"
+    property="image"
+  />
 
   {{#if label.length}}
     <p class="h3 faded subline title p-job-title" property="jobTitle">{{label}}</p>

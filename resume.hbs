@@ -11,14 +11,14 @@
                 /\___/                \ \____/
                 \/__/                  \/___/
 
-Powered by Hydejack v7.4.1 <https://qwtel.com/hydejack/>
+Powered by Hydejack <https://qwtel.com/hydejack/>
 -->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="generator" content="Hydejack JSON Resume">
-    <title>{{#resume.basics}}{{name}}{{#if label.length}}, {{label}}{{/if}}{{/resume.basics}}</title>
+    <meta name="generator" content="Hydejack JSON Resume v0.1.0">
+    <title>{{#resume.basics}}{{name}}{{#if label.length}} – {{label}}{{/if}}{{/resume.basics}}</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:700%7CNoto+Sans:400,400i,700,700i">
     <link rel="stylesheet" href="/icomoon/style.css">
     <style>{{{css}}}</style>
@@ -28,9 +28,9 @@ Powered by Hydejack v7.4.1 <https://qwtel.com/hydejack/>
       <main id="_main" class="content fade-in layout-resume" role="main">
         <article
           id="resume"
-          class="page {{#unless nsd}}vcard h-card{{/unless}}"
+          class="page vcard h-card"
           role="article"
-          {{#unless nsd}}vocab="http://schema.org/" typeof="Person"{{/unless}}
+          vocab="http://schema.org/" typeof="Person"
           >
           {{> header }}
 
@@ -59,8 +59,8 @@ Powered by Hydejack v7.4.1 <https://qwtel.com/hydejack/>
           <hr/>
           <p>
             <small>
-              Want a personal site with JSON Resume integration that looks like this?</br>
-              Check out <a class="external" href="https://qwtel.com/hydejack/">Hydejack</a>
+              Want to include this
+              Build your personal site with <a class="external" href="https://qwtel.com/hydejack/">Hydejack</a>
             </small>
           </p>
           <hr class="sr-only"/>
