@@ -2,6 +2,10 @@ var fs = require("fs");
 var path = require('path');
 var Handlebars = require("handlebars");
 
+Handlebars.registerHelper({
+  noWhiteSpace: function (s) { return s.replace(' ', ''); }
+});
+
 function render(resume) {
 	var css = fs.readFileSync(__dirname + "/style.css", "utf-8");
 	var tpl = fs.readFileSync(__dirname + "/resume.hbs", "utf-8");

@@ -1,26 +1,29 @@
 {{#if resume.skills.length}}
-<section id="skills">
-	<h2>Skills</h2>
-	{{#each resume.skills}}
-	<div class="item">
-		{{#if name}}
-		<div class="name">
-			{{name}}
-		</div>
-		{{/if}}
-		{{#if level}}
-		<div class="level">
-			<em>{{level}}</em>
-		</div>
-		{{/if}}
-		{{#if keywords.length}}
-		<ul class="keywords">
-			{{#each keywords}}
-			<li>{{.}}</li>
-			{{/each}}
-		</ul>
-		{{/if}}
-	</div>
-	{{/each}}
+<section>
+  <h2 id="skills" class="h3 faded hr">
+    Skills
+    <span class="symbol icon-wrench"></span>
+  </h2>
+  <dl class="skills">
+    {{#each resume.skills}}
+      <dt class="h4 fl">{{name}}</dt>
+      <dd class="faded clearafter">
+        <div class="fr mb05">
+          <span class="sr-only">Level:</span>
+          {{ level }}
+        </div>
+        {{#if keywords.length}}
+        <div>
+          <span class="sr-only">Keywords:</span>
+          <ul class="tags">
+            {{#each keywords}}
+              <li class="tag">{{.}}</li>
+            {{/each}}
+          </ul>
+        </div>
+        {{/if}}
+      </dd>
+    {{/each}}
+  </dl>
 </section>
 {{/if}}

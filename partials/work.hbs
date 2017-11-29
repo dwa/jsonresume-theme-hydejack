@@ -1,52 +1,46 @@
 {{#if resume.work.length}}
-<section id="work">
-	<h2>Work</h2>
-	{{#each resume.work}}
-	<div class="item">
-		{{#if company}}
-		<h3 class="name">
-			{{company}}
-		</h3>
-		{{/if}}
-		<div class="date">
-			{{#if startDate}}
-			<span class="startDate">
-				{{startDate}}
-			</span>
-			{{/if}}
-			{{#if endDate}}
-			<span class="endDate">
-				- {{endDate}}
-			</span>
-			{{else}}
-			<span class="endDate">
-				- Present
-			</span>
-			{{/if}}
-		</div>
-		{{#if position}}
-		<div class="position">
-			{{position}}
-		</div>
-		{{/if}}
-		{{#if website}}
-		<div class="website">
-			<a href="{{website}}">{{website}}</a>
-		</div>
-		{{/if}}
-		{{#if summary}}
-		<div class="summary">
-			<p>{{summary}}</p>
-		</div>
-		{{/if}}
-		{{#if highlights.length}}
-		<ul class="highlights">
-			{{#each highlights}}
-			<li>{{.}}</li>
-			{{/each}}
-		</ul>
-		{{/if}}
-	</div>
-	{{/each}}
+<section>
+  <h2 id="work" class="h3 faded hr">
+    Experience
+    <span class="symbol icon-briefcase"></span>
+  </h2>
+  {{#each resume.work}}
+    <header
+      class="{{#unless @first}}mt3{{/unless}}"
+      property="{{#if endDate.length}}alumniOf{{else}}worksFor{{/if}}"
+      typeof="Organization"
+      >
+      {{#if startDate.length}}
+        <p class="faded">
+          <time datetime="{{startDate}}">{{startDate}}</time>
+          –
+          {{#if endDate.length}}
+            <time datetime="{{endDate}}">{{endDate}}</time>
+          {{else}}
+            <em>present</em>
+          {{/if}}
+        </p>
+      {{/if}}
+      <h3 class="h4 faded">
+        <meta property="name" content="{{company}}"/>
+        <span class="bc">{{position}}</span>
+        at
+        {{#if endDate.length}}
+          {{> link title=company href=website spanClass="bc" property="sameAs" class=""}}
+        {{else}}
+          {{> link title=company href=website spanClass="bc" property="sameAs" class="org p-org h-card"}}
+        {{/if}}
+      </h3>
+    </header>
+
+    {{> message text=summary alt=""}}
+
+    <h4 class="sr-only">Highlights</h4>
+    <ul>
+      {{#each highlights}}
+        <li>{{.}}</li>
+      {{/each}}
+    </ul>
+  {{/each}}
 </section>
 {{/if}}
