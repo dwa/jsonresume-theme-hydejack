@@ -3,6 +3,7 @@ var path = require('path');
 var Handlebars = require("handlebars");
 var utils = require('jsonresume-themeutils');
 
+var version = require('./package.json').version;
 var social = require('./social.json');
 var countries = require('./countries.json');
 
@@ -89,6 +90,7 @@ function render(resume) {
   return Handlebars.compile(tpl)({
     css: css,
     resume: resume,
+    version: version,
   });
 }
 
