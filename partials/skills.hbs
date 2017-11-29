@@ -8,10 +8,10 @@
     {{#each resume.skills}}
       <dt class="h4 fl">{{name}}</dt>
       <dd class="faded clearafter">
-        <div class="fr mb05">
+        <div class="fr">
           <span class="sr-only">Level:</span>
           {{#switch level}}
-            {{#case "3" "master" "expert" "senior" break=true}}
+            {{#case "3" "master" "expert" "senior" "professional" break=true}}
               <span class="help" title="{{level}}">
                 <span class="sr-only">{{level}}</span>
                 <span class="icon-star-full"></span><span class="icon-star-full"></span><span class="icon-star-full"></span>
