@@ -95,5 +95,5 @@ function render(resume) {
 }
 
 module.exports = {
-	render: render
+  render: render
 };
