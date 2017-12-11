@@ -56,15 +56,15 @@ Handlebars.registerHelper({
   urlForPicture: function(basics) {
     return utils.getUrlForPicture({ basics: basics })
   },
-  socialIcon(network) {
+  socialIcon: function(network) {
     var nw = network.toLowerCase();
     return social && social[nw] && social[nw].icon || 'icon-link';
   },
-  socialName(network) {
+  socialName: function(network) {
     var nw = network.toLowerCase();
     return social && social[nw] && social[nw].name || network;
   },
-  countryName(code) {
+  countryName: function(code) {
     var cd = code.toUpperCase();
     var country = countries && countries.filter(function(c) { return c.code === cd })[0];
     return country && country.name || code;
