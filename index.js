@@ -10,9 +10,9 @@ var countries = require('./countries.json');
 utils.setConfig({
   date_format: 'MMM YYYY',
   gravatar: {
-      s: '256',
-      r: 'pg',
-      d: 'mm'
+    s: '256',
+    r: 'pg',
+    d: 'mm'
   }
  });
 
