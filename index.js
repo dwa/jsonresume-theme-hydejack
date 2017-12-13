@@ -58,16 +58,16 @@ Handlebars.registerHelper({
   },
   socialIcon: function(network) {
     var nw = network.toLowerCase();
-    return social && social[nw] && social[nw].icon || 'icon-link';
+    return (social && social[nw] && social[nw].icon) || 'icon-link';
   },
   socialName: function(network) {
     var nw = network.toLowerCase();
-    return social && social[nw] && social[nw].name || network;
+    return (social && social[nw] && social[nw].name) || network;
   },
   countryName: function(code) {
     var cd = code.toUpperCase();
     var country = countries && countries.filter(function(c) { return c.code === cd })[0];
-    return country && country.name || code;
+    return (country && country.name) || code;
   }
 });
 
